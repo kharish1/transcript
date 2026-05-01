@@ -1,0 +1,627 @@
+1
+00:00:04,789 --> 00:00:08,010
+So let us see in the workshops list uh component
+
+2
+00:00:08,510 --> 00:00:12,739
+uh how we'll write a test to test that uh
+
+3
+00:00:12,750 --> 00:00:15,510
+the loading message should show up initially when the workshops
+
+4
+00:00:15,510 --> 00:00:19,540
+list component loads that uh shows up uh we are
+
+5
+00:00:19,540 --> 00:00:22,899
+fetching workshops That message should show up I'll check the
+
+6
+00:00:22,899 --> 00:00:26,159
+VS code I'm in the folder which is the project
+
+7
+00:00:26,159 --> 00:00:31,200
+folder Workshops are And we'll create a file if it
+
+8
+00:00:31,200 --> 00:00:33,560
+is not already there You may already have this file
+
+9
+00:00:35,000 --> 00:00:38,040
+It is uh right next to workshops list We'll create
+
+10
+00:00:38,040 --> 00:00:51,959
+a workshops lists.js So first of all we need to
+
+11
+00:00:51,959 --> 00:00:58,939
+import the workshops list component Then we would need to
+
+12
+00:00:58,939 --> 00:01:25,150
+import render from React uh uh testing library Oh then
+
+13
+00:01:25,150 --> 00:01:29,279
+we would uh have to Start of the test It's
+
+14
+00:01:29,279 --> 00:01:39,489
+better to group the test using describe So we'll use
+
+15
+00:01:39,489 --> 00:01:43,010
+a describe block which is used in uh just to
+
+16
+00:01:43,010 --> 00:01:46,410
+group test or just uh uh Jasmine just uh in
+
+17
+00:01:46,410 --> 00:01:48,769
+the GST framework it's used to group test So you
+
+18
+00:01:48,769 --> 00:01:51,610
+can write many tests within a described block So that
+
+19
+00:01:51,610 --> 00:01:54,529
+forms a test specification or a test we actually sorry
+
+20
+00:01:55,620 --> 00:02:01,040
+That's sweet So this is workshops uh list initial uh
+
+21
+00:02:01,050 --> 00:02:09,910
+page load test or Mm Buckshop's list Initial page note
+
+22
+00:02:11,270 --> 00:02:13,630
+So we need to test 3 things under this One
+
+23
+00:02:13,669 --> 00:02:15,509
+that the loading message shows up which we're going to
+
+24
+00:02:15,509 --> 00:02:20,589
+do now Then the workshops if fit successfully after that
+
+25
+00:02:20,589 --> 00:02:22,750
+they are shown or if there's an error the error
+
+26
+00:02:22,750 --> 00:02:24,990
+message is shown These 3 tests will be part of
+
+27
+00:02:24,990 --> 00:02:29,830
+this test week So and describe the second document will
+
+28
+00:02:29,830 --> 00:02:32,949
+be a function inside which you'll write the test The
+
+29
+00:02:32,949 --> 00:02:36,029
+test can be written either using IT function it literally
+
+30
+00:02:36,029 --> 00:02:39,229
+the English word it or the test function So that's
+
+31
+00:02:39,229 --> 00:02:42,580
+your preference so you write it The test that we
+
+32
+00:02:42,580 --> 00:02:45,410
+are going to write right now is that it should
+
+33
+00:02:45,410 --> 00:02:57,889
+uh show the loading message initially The second argument is
+
+34
+00:02:57,889 --> 00:03:10,479
+a function So we need to render Uh the workshops
+
+35
+00:03:10,500 --> 00:03:19,259
+uh list Now the workshops list component Doesn't have any
+
+36
+00:03:19,259 --> 00:03:26,429
+special requirements So we can load it directly Special requirements
+
+37
+00:03:26,429 --> 00:03:29,309
+in the sense it's not using some other library like
+
+38
+00:03:29,309 --> 00:03:33,229
+React router uh Dome is It is using React router
+
+39
+00:03:33,229 --> 00:03:35,419
+down the link so we have to wrap it up
+
+40
+00:03:35,419 --> 00:03:37,509
+in a browser router So whenever we have a link
+
+41
+00:03:37,509 --> 00:03:40,759
+being used link cannot be used outside a browser router
+
+42
+00:03:40,910 --> 00:03:44,869
+So because of that requirement we'll put inside a browser
+
+43
+00:03:44,869 --> 00:03:48,470
+router Browser router is imported from react router down We'll
+
+44
+00:03:48,470 --> 00:03:51,190
+put our workshops list component Otherwise generally we'll just render
+
+45
+00:03:51,190 --> 00:03:55,619
+our component But uh links cannot be used outside the
+
+46
+00:03:55,619 --> 00:03:58,339
+browser router uh context so you'll have to give that
+
+47
+00:03:59,539 --> 00:04:03,410
+So we have rendered whatever we have to If you
+
+48
+00:04:03,410 --> 00:04:06,610
+didn't have link we would have just done directly like
+
+49
+00:04:06,610 --> 00:04:12,979
+this just a workshops list After having rendered it using
+
+50
+00:04:12,979 --> 00:04:16,859
+React Testing library's render method we basically it's like similar
+
+51
+00:04:16,859 --> 00:04:19,700
+to rendering in a browser environment it'll get rendered It's
+
+52
+00:04:19,700 --> 00:04:22,519
+uh some DOM environment which just creates using just um
+
+53
+00:04:22,519 --> 00:04:27,619
+framework So a browser-like environment it renders itself Now we'll
+
+54
+00:04:27,619 --> 00:04:31,489
+test the uh whether the loading message appears So for
+
+55
+00:04:31,489 --> 00:04:33,589
+that we need to give some kind of test ID
+
+56
+00:04:34,329 --> 00:04:37,010
+So we have to uh test whether this is appearing
+
+57
+00:04:37,070 --> 00:04:40,049
+this loading message Now this already has a data test
+
+58
+00:04:40,049 --> 00:04:43,519
+ID So this is very specific to reactor testing library
+
+59
+00:04:43,559 --> 00:04:46,170
+You can give a custom attribute data test ID It's
+
+60
+00:04:46,170 --> 00:04:48,970
+very similar to giving an ID or uh an element
+
+61
+00:04:48,970 --> 00:04:51,579
+in HTML So this is an ID given just for
+
+62
+00:04:51,579 --> 00:04:54,679
+the purposes of testing It should be unique again So
+
+63
+00:04:54,679 --> 00:04:56,929
+loading message we'll try to find out if there's any
+
+64
+00:04:56,929 --> 00:04:59,660
+element with that test ID So how do we do
+
+65
+00:04:59,660 --> 00:05:02,700
+that in uh react testing library uh we have to
+
+66
+00:05:02,700 --> 00:05:06,279
+say screen where screen we have to input from react
+
+67
+00:05:06,279 --> 00:05:09,589
+testing library It's similar to what you do in HTML
+
+68
+00:05:09,589 --> 00:05:15,470
+like document in JavaScript document so screen There are various
+
+69
+00:05:15,470 --> 00:05:18,519
+query methods similar to again like you have get element
+
+70
+00:05:18,519 --> 00:05:23,959
+ID query selector similarly you have various uh queries uh
+
+71
+00:05:23,959 --> 00:05:26,640
+under the screen object Get my test ID is what
+
+72
+00:05:26,640 --> 00:05:30,480
+we'll be using This is not the preferred way generally
+
+73
+00:05:30,839 --> 00:05:33,399
+There are better ways We'll see why certain things are
+
+74
+00:05:33,399 --> 00:05:36,320
+better This is the least preferred ones one but we
+
+75
+00:05:36,320 --> 00:05:39,320
+can start using this because it's straightforward Later we'll see
+
+76
+00:05:39,320 --> 00:05:42,359
+other ways So get my test I is what we're
+
+77
+00:05:42,359 --> 00:05:46,850
+using now Later we'll see other query methods So this
+
+78
+00:05:46,850 --> 00:05:53,070
+gives us access to That element And we can test
+
+79
+00:05:53,070 --> 00:05:55,549
+if it exists in the DOM this element whether we
+
+80
+00:05:55,549 --> 00:05:57,589
+were able to fetch it because really that means we
+
+81
+00:05:57,589 --> 00:06:00,109
+have queried and got it So it should be in
+
+82
+00:06:00,109 --> 00:06:05,769
+the document And uh yes DOM is a uh uh
+
+83
+00:06:05,769 --> 00:06:10,109
+a library which comes pre-installed with the create reactor and
+
+84
+00:06:10,109 --> 00:06:12,859
+uh that has different matches like to be in the
+
+85
+00:06:12,859 --> 00:06:17,510
+document So we can expect So I expect it just
+
+86
+00:06:17,510 --> 00:06:21,630
+uh just uh method for uh sessions So you'll put
+
+87
+00:06:21,630 --> 00:06:24,750
+in whatever this element and then you have these match
+
+88
+00:06:24,750 --> 00:06:27,790
+functions which come from GE do so to be in
+
+89
+00:06:27,790 --> 00:06:34,059
+the document And why we are able to use this
+
+90
+00:06:34,059 --> 00:06:37,299
+matcher this is not a matcher which isn't jest Just
+
+91
+00:06:37,299 --> 00:06:40,220
+as certain matches like you can see if you go
+
+92
+00:06:40,220 --> 00:06:46,019
+to justj.org Sorry just to start are you You can
+
+93
+00:06:46,019 --> 00:06:49,329
+see there are certain matches and just OK you see
+
+94
+00:06:49,329 --> 00:06:52,209
+the matches here Some matches are explained here and the
+
+95
+00:06:52,209 --> 00:06:55,320
+reference to all the matches is here And you see
+
+96
+00:06:55,359 --> 00:06:58,059
+these are all the matches We don't see anything like
+
+97
+00:06:58,239 --> 00:07:00,000
+to be in the document even if you search out
+
+98
+00:07:00,000 --> 00:07:04,119
+here to be in the document In the document you
+
+99
+00:07:04,119 --> 00:07:07,200
+don't find it I'm searching here You have other things
+
+100
+00:07:07,200 --> 00:07:09,000
+like to be less than to be greater than to
+
+101
+00:07:09,000 --> 00:07:12,480
+be equal to be etc but to equal but you
+
+102
+00:07:12,480 --> 00:07:14,720
+don't have to be in the document This comes actually
+
+103
+00:07:14,720 --> 00:07:22,329
+from another library called JSDO That's your yes no And
+
+104
+00:07:22,329 --> 00:07:24,570
+uh you can see the different matches here You'll find
+
+105
+00:07:24,570 --> 00:07:28,829
+to be in the document To be in the document
+
+106
+00:07:29,200 --> 00:07:31,559
+How come we are able to use this matcher even
+
+107
+00:07:31,559 --> 00:07:37,190
+though we're not included it Uh that's because Uh the
+
+108
+00:07:37,190 --> 00:07:40,570
+first test before any test script runs test file runs
+
+109
+00:07:41,029 --> 00:07:43,140
+there is a setup test this In the create your
+
+110
+00:07:43,140 --> 00:07:45,630
+tab you have the setup test this If you write
+
+111
+00:07:45,630 --> 00:07:49,100
+a file like this inside the SRC folder It should
+
+112
+00:07:49,100 --> 00:07:52,619
+be called setupt.s with the case incorrect Then it will
+
+113
+00:07:52,619 --> 00:07:55,779
+run before every unit test file and here GO has
+
+114
+00:07:55,779 --> 00:07:58,459
+already been included It's create react app has already downloaded
+
+115
+00:07:58,459 --> 00:08:00,579
+it at the time of creation of the application and
+
+116
+00:08:00,579 --> 00:08:03,359
+it's imported it Therefore we are able to use it
+
+117
+00:08:03,820 --> 00:08:06,299
+Therefore we are able to use to be in the
+
+118
+00:08:06,299 --> 00:08:09,899
+document Now this test is complete Let us run it
+
+119
+00:08:10,019 --> 00:08:11,420
+So to run it we have to be in the
+
+120
+00:08:11,420 --> 00:08:14,140
+project folder We are in the project folder workshops app
+
+121
+00:08:15,190 --> 00:08:20,260
+And uh we have run NPM test Few changes uh
+
+122
+00:08:20,260 --> 00:08:24,559
+have been we can make to uh this In fact
+
+123
+00:08:24,640 --> 00:08:28,040
+it's already made so you can see react script test
+
+124
+00:08:28,040 --> 00:08:30,640
+is what you would find as a test script in
+
+125
+00:08:30,640 --> 00:08:34,719
+the default create reactive application We've added hyphen and silent
+
+126
+00:08:35,119 --> 00:08:38,159
+which will suppress some warnings uh because react testing library
+
+127
+00:08:38,159 --> 00:08:41,979
+gives a lot of warnings which are actually uh not
+
+128
+00:08:42,280 --> 00:08:46,400
+uh real warnings It's OK It's even they explain that
+
+129
+00:08:46,400 --> 00:08:48,520
+is reactor testing that they explain that they're not real
+
+130
+00:08:48,520 --> 00:08:50,799
+warnings If you want you can show the warnings but
+
+131
+00:08:50,799 --> 00:08:52,469
+it'll be a little annoying so you can remove this
+
+132
+00:08:52,469 --> 00:08:55,739
+if you want I have maintained hyphenated silent which will
+
+133
+00:08:55,739 --> 00:08:59,039
+remove the warnings and show only errors Verbos which will
+
+134
+00:08:59,039 --> 00:09:03,280
+give like uh more uh lengthy descriptions of the test
+
+135
+00:09:03,280 --> 00:09:07,280
+results of what passed what failed etc and hyphen FN
+
+136
+00:09:07,280 --> 00:09:09,679
+coverage which will also give a coverage report that is
+
+137
+00:09:09,679 --> 00:09:11,780
+how many lines of code were covered in the test
+
+138
+00:09:12,590 --> 00:09:17,369
+So having made these modifications you can make these Uh
+
+139
+00:09:17,450 --> 00:09:19,489
+and also coverage script is added that only if you
+
+140
+00:09:19,489 --> 00:09:21,650
+want only coverage and it only with coverage and I'll
+
+141
+00:09:21,650 --> 00:09:25,099
+show the coverage report Having done these changes now if
+
+142
+00:09:25,099 --> 00:09:32,570
+you run the test You can see that it passed
+
+143
+00:09:32,780 --> 00:09:35,859
+This proves that uh the loading message shows up on
+
+144
+00:09:35,859 --> 00:09:39,099
+initial page load Let us actually make it uh to
+
+145
+00:09:39,099 --> 00:09:41,859
+see the test is effective We'll go to the component
+
+146
+00:09:41,859 --> 00:09:46,450
+workshop list JSX And uh we will make a change
+
+147
+00:09:46,450 --> 00:09:49,690
+so that the loading message doesn't show up So we're
+
+148
+00:09:49,690 --> 00:09:51,849
+saying if while it's loading it should show this up
+
+149
+00:09:51,909 --> 00:09:55,950
+right So let's say that we remove this Let's say
+
+150
+00:09:55,950 --> 00:09:58,150
+a developer comes and comments this out or removes this
+
+151
+00:09:58,539 --> 00:10:01,030
+so it will not show up now And your test
+
+152
+00:10:01,030 --> 00:10:05,559
+will fail So it should show the loading message that
+
+153
+00:10:05,559 --> 00:10:08,580
+test fails Unable to find such an element So it
+
+154
+00:10:08,580 --> 00:10:11,510
+could not find that after the uh component loaded So
+
+155
+00:10:11,510 --> 00:10:14,070
+this proves that your test is effective So now we'll
+
+156
+00:10:14,070 --> 00:10:18,820
+get it back I will save the file And the
+
+157
+00:10:18,820 --> 00:10:21,679
+test has started passing again So that completes this test

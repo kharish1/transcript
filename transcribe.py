@@ -39,6 +39,9 @@ from pathlib import Path
 import boto3
 from tqdm import tqdm
 
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+
 VIDEO_EXTENSIONS = {".mp4", ".mov", ".avi", ".mkv", ".flv", ".wmv", ".m4v", ".webm"}
 SUPPORTED_FORMATS = {"mp4", "mov", "avi", "mkv", "flv", "wmv", "m4v", "webm", "wav", "mp3", "ogg", "amr"}
 DEFAULT_FORMAT = "mp4"

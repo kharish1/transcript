@@ -6,7 +6,8 @@ So let us see in the workshops list uh component
 00:00:08,510 --> 00:00:12,739
 uh how we'll write a test to test that uh
 
-3
+3hon
+hon
 00:00:12,750 --> 00:00:15,510
 the loading message should show up initially when the workshops
 
